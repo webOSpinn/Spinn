@@ -1,0 +1,31 @@
+.spinn-refresh-btn {
+	background-image: url('../images/menu-icon-sync.png');
+}
+
+.spinn-activity-tool-button {
+	height: 52px;
+	position: static;
+	width: 52px;
+}
+
+.spinn-activityToolButton-animation {
+	position: static;
+	right: 0px;
+	top: 0px;
+	width: 32px;
+	height: 32px;
+	margin: 10px;
+	background: url(../images/activityIcon.png) no-repeat;
+}
+.spinn-activityToolButton-animation.frame1 {background-position:0px 0px;}
+.spinn-activityToolButton-animation.frame2 {background-position:0px -32px;}
+.spinn-activityToolButton-animation.frame3 {background-position:0px -64px;}
+.spinn-activityToolButton-animation.frame4 {background-position:0px -96px;}
+.spinn-activityToolButton-animation.frame5 {background-position:0px -128px;}
+.spinn-activityToolButton-animation.frame6 {background-position:0px -160px;}
+.spinn-activityToolButton-animation.frame7 {background-position:0px -192px;}
+.spinn-activityToolButton-animation.frame8 {background-position:0px -224px;}
+.spinn-activityToolButton-animation.frame9 {background-position:0px -256px;}
+.spinn-activityToolButton-animation.frame10 {background-position:0px -288px;}
+.spinn-activityToolButton-animation.frame11 {background-position:0px -320px;}
+.spinn-activityToolButton-animation.frame12 {background-position:0px -352px;}

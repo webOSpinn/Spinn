@@ -1,0 +1,10 @@
+.spinn-selected-item {
+	background: transparent url(../images/down-bg.png) left top no-repeat;
+	-webkit-background-size: 100% 100%;
+}
+
+.spinn-svr-list .enyo-held{
+	border-top-color: transparent;
+	background: transparent url(../images/highlight-bg.png) left top no-repeat;
+	-webkit-background-size: 100% 100%;
+}

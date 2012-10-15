@@ -1,0 +1,6 @@
+.isPhone .enyo-sliding-view-shadow {
+	width: 10px;
+	left: -10px;
+	background:  url('../images/sliding-shadow.png');
+	background-size: 10px 2px;
+}
