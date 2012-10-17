@@ -22,5 +22,10 @@ enyo.kind({
 	okHandler: function() {
 		this.doOk();
 		this.close();
+	},
+	close: function() {
+		this.inherited(arguments);
+		//Need this to stop the dialog from being hidden but still interactive.  This seems to be an enyo bug.
+		this.hide();
 	}
 });
