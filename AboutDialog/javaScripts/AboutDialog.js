@@ -142,5 +142,10 @@ enyo.kind({
 	{
 		var params = {id: "com.palm.app.browser", params: {target: this.facebookUrl}};
 		this.$.appOpener.call(params);
+	},
+	close: function() {
+		this.inherited(arguments);
+		//Need this to stop the dialog from being hidden but still interactive.  This seems to be an enyo bug.
+		this.hide();
 	}
 });

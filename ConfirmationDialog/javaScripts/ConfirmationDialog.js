@@ -12,7 +12,7 @@ enyo.kind({
 	components: [
 		{name: "message"},
 		{kind:"Spacer", height: "10px"},
-		{kind: "AffirmDeny", affirmCaption: "Yes", onAffirm: "yesHandler", denyCaption: "No", onDeny: "noHandler" }		
+		{kind: "Spinn.AffirmDeny", affirmCaption: "Yes", onAffirm: "yesHandler", denyCaption: "No", onDeny: "noHandler" }		
 	],
 	rendered: function() {
 		this.messageChanged();

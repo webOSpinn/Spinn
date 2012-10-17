@@ -55,5 +55,10 @@ enyo.kind({
 	resetHandler: function() {
 		this.doCancel();
 		this.close();
+	},
+	close: function() {
+		this.inherited(arguments);
+		//Need this to stop the dialog from being hidden but still interactive.  This seems to be an enyo bug.
+		this.hide();
 	}
 });
