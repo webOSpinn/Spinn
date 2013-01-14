@@ -1,4 +1,5 @@
 enyo.depends(
+	"Spinn/RssToJson.js",
 	"Spinn/EnyoExtensions/depends.js",
 	"Spinn/PhoneExtensions/depends.js",
 	"Spinn/Animator/depends.js",
