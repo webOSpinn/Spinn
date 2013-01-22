@@ -1,7 +1,8 @@
 enyo.kind({
 	name: "Spinn.CountableItem",
-	kind: enyo.Item,
+	kind: enyo.SwipeableItem,
 	layoutKind: "VFlexLayout", 
+	swipeable: false,
 	tapHighlight: true,
 	published: {
       caption: "",

@@ -1,7 +1,8 @@
 enyo.kind({
 	name: "Spinn.IconItem",
-	kind: enyo.Item,
+	kind: enyo.SwipeableItem,
 	align: "center",
+	swipeable: false,
 	tapHighlight: true,
 	layoutKind: "HFlexLayout", 
 	published: {
