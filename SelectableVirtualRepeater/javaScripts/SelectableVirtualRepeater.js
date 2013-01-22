@@ -31,7 +31,7 @@ enyo.kind({
 			
 			this.selectedIndex = inIndex;
 			this.selectedID = inID;
-			node.className  = "spinn-selected-item";
+			node.className  = "spinn-selected-svr-item";
 		}
 	},
 	clearSelection: function() {
