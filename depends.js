@@ -12,5 +12,6 @@ enyo.depends(
 	"Spinn/InfoDialog/depends.js",
 	"Spinn/InputDialog/depends.js",
 	"Spinn/AboutDialog/depends.js",
+	"Spinn/SelectableVirtualList/depends.js",
 	"Spinn/SelectableVirtualRepeater/depends.js"
 );
