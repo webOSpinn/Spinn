@@ -7,19 +7,19 @@ enyo.kind({
 	rendered: function() {
 		this.inherited(arguments);
 		
-		if(this.reselectOnRender) {
-			this.reselectOnRender = false;
+		if(this.reselectItem) {
+			this.reselectItem = false;
 			this.setSelectedItem(this.getSelectedIndex(), this.getSelectedID());
 		}
 	},
-	setItemToSelectOnRender: function(inIndex, inID) {
+	setItemToSelect: function(inIndex, inID) {
 		//clear the selected item first
 		this.clearSelection();
 		
 		this.selectedIndex = inIndex;
 		this.selectedID = inID;
 		//Set this so the item will be selected on render
-		this.reselectOnRender = true;
+		this.reselectItem = true;
 	},
 	setSelectedItem: function(inIndex, inID) {
 		var node = this.fetchRowNode(inIndex);

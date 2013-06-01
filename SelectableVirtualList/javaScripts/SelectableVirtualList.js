@@ -4,22 +4,22 @@ enyo.kind({
 	className: "spinn-svl-list",
 	selectedIndex: -1,			// index number of selected item (if any)
 	selectedID: null,			// id of selected item (if any)
-	rendered: function() {
-		this.inherited(arguments);
-		
-		if(this.reselectOnRender) {
-			this.reselectOnRender = false;
+	setupRow: function(a,b) {		
+		if(this.reselectItem) {
+			this.reselectItem = false;
 			this.setSelectedItem(this.getSelectedIndex(), this.getSelectedID());
 		}
+		
+		return this.doSetupRow(b);
 	},
-	setItemToSelectOnRender: function(inIndex, inID) {
+	setItemToSelect: function(inIndex, inID) {
 		//clear the selected item first
 		this.clearSelection();
 		
 		this.selectedIndex = inIndex;
 		this.selectedID = inID;
 		//Set this so the item will be selected on render
-		this.reselectOnRender = true;
+		this.reselectItem = true;
 	},
 	setSelectedItem: function(inIndex, inID) {
 		var node = this.$.list.fetchRowNode(inIndex);
