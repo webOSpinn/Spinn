@@ -1,15 +1,15 @@
 enyo.kind({
 	name: "Spinn.Utils",
-	exists = function (a) {
+	exists: function (a) {
 		return typeof a !== "undefined" && a !== NaN && a !== null
 	},
-	isEmptyObject = function (b) {
+	isEmptyObject: function (b) {
         for (var a in b) {
             return false
         }
         return true
     },
-	isInt = function (a) {
+	isInt: function (a) {
 		if(this.exists(a)){
 			var intRegEx = /^-?\d+$/;
 			return intRegEx.test(a);
@@ -17,7 +17,7 @@ enyo.kind({
 			return false;
 		}
 	},
-	isFloat = function (a) {
+	isFloat: function (a) {
 		if(this.exists(a)){
 			var floatRegEx = /^[-+]?\d+(\.\d+)?$/;
 			return floatRegEx.test(a);
@@ -26,7 +26,7 @@ enyo.kind({
 		}
 	},
 	//http://codeaid.net/javascript/convert-seconds-to-hours-minutes-and-seconds-(javascript)
-	secondsToTime = function(secs)
+	secondsToTime: function(secs)
 	{
 		var hours = Math.floor(secs / (60 * 60));
 	   
@@ -44,7 +44,7 @@ enyo.kind({
 		return obj;
 	}
 	//http://stackoverflow.com/questions/2998784/how-to-output-integers-with-leading-zeros-in-javascript
-	zeroPad = function(num, places) {
+	zeroPad: function(num, places) {
 		var zero = places - num.toString().length + 1;
 		return Array(+(zero > 0 && zero)).join("0") + num;
 	}
