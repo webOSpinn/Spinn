@@ -42,7 +42,7 @@ enyo.kind({
 			"s": seconds
 		};
 		return obj;
-	}
+	},
 	//http://stackoverflow.com/questions/2998784/how-to-output-integers-with-leading-zeros-in-javascript
 	zeroPad: function(num, places) {
 		var zero = places - num.toString().length + 1;
