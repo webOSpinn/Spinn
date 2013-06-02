@@ -20,7 +20,7 @@ enyo.kind({
 		twitterUrl: null
 	},
 	components: [
-		{kind: "Spinn.Utils" name: "Utils"},
+		{kind: "Spinn.Utils", name: "Utils"},
 		{name: "appOpener", kind: "PalmService", service: "palm://com.palm.applicationManager/", method: "open"},
 		{kind: "Group", caption: "", contentFit: true, layoutKind: "VFlexLayout", style: "height: 125px;", components: [
 			{kind: "Scroller", name:"fileListScroller", flex: 1, autoHorizontal: false, horizontal: false,

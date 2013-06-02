@@ -5,7 +5,7 @@ enyo.kind({
       count: 0
 	},
 	components: [
-		{kind: "Spinn.Utils" name: "Utils"},
+		{kind: "Spinn.Utils", name: "Utils"},
 		{kind: "Spinn.Animator", name:"theAnimator", cssClass: "spinn-count-pill-animation", lastFrame: 10, timerInterval: 50},
 		{name: "spinner", nodeTag: "div", className: "spinn-count-pill-animation", showing: false},
 		{name: "count", className: "spinn-count-pill-count", flex: 0}
