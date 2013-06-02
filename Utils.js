@@ -1,5 +1,5 @@
 enyo.kind({
-	name: "Utils",
+	name: "Spinn.Utils",
 	exists = function (a) {
 		return typeof a !== "undefined" && a !== NaN && a !== null
 	},
@@ -10,7 +10,7 @@ enyo.kind({
         return true
     },
 	isInt = function (a) {
-		if(enyo.exists(a)){
+		if(this.exists(a)){
 			var intRegEx = /^-?\d+$/;
 			return intRegEx.test(a);
 		} else {
@@ -18,7 +18,7 @@ enyo.kind({
 		}
 	},
 	isFloat = function (a) {
-		if(enyo.exists(a)){
+		if(this.exists(a)){
 			var floatRegEx = /^[-+]?\d+(\.\d+)?$/;
 			return floatRegEx.test(a);
 		} else {

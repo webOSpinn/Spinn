@@ -5,7 +5,8 @@ enyo.kind({
       count: 0
 	},
 	components: [
-		{kind:"Spinn.Animator", name:"theAnimator", cssClass: "spinn-count-pill-animation", lastFrame: 10, timerInterval: 50},
+		{kind: "Spinn.Utils" name: "Utils"},
+		{kind: "Spinn.Animator", name:"theAnimator", cssClass: "spinn-count-pill-animation", lastFrame: 10, timerInterval: 50},
 		{name: "spinner", nodeTag: "div", className: "spinn-count-pill-animation", showing: false},
 		{name: "count", className: "spinn-count-pill-count", flex: 0}
 	],
@@ -19,7 +20,7 @@ enyo.kind({
 	},
 	countChanged: function() {
 		//Make sure that what is passed in is a number if it is not default to 0.
-		if(enyo.isInt(this.count) == false) {
+		if(Utils.isInt(this.count) == false) {
 			this.count = 0;
 		}
 		this.$.count.setContent(this.count);

@@ -20,6 +20,7 @@ enyo.kind({
 		twitterUrl: null
 	},
 	components: [
+		{kind: "Spinn.Utils" name: "Utils"},
 		{name: "appOpener", kind: "PalmService", service: "palm://com.palm.applicationManager/", method: "open"},
 		{kind: "Group", caption: "", contentFit: true, layoutKind: "VFlexLayout", style: "height: 125px;", components: [
 			{kind: "Scroller", name:"fileListScroller", flex: 1, autoHorizontal: false, horizontal: false,
@@ -44,18 +45,18 @@ enyo.kind({
 		this.inherited(arguments);
 		this.appInfo = enyo.fetchAppInfo();
 		
-		if(enyo.exists(this.title) == false) { this.title = this.appInfo.title; }
-		if(enyo.exists(this.version) == false) { this.version = this.appInfo.version; }
-		if(enyo.exists(this.vendor) == false) { this.vendor = this.appInfo.vendor; }
-		if(enyo.exists(this.website) == false) { this.website = this.appInfo.vendorurl; }
-		if(enyo.exists(this.email) == false) { this.email = this.appInfo.aboutDialogInfo.email; }
-		if(enyo.exists(this.emailSubject) == false) { this.emailSubject = this.appInfo.aboutDialogInfo.emailSubject; }
-		if(enyo.exists(this.emailMessage) == false) { this.emailMessage = this.appInfo.aboutDialogInfo.emailMessage; }
-		if(enyo.exists(this.description) == false) { this.description = this.appInfo.aboutDialogInfo.description; }
-		if(enyo.exists(this.copyright) == false) { this.copyright = this.appInfo.aboutDialogInfo.copyright; }
-		if(enyo.exists(this.license) == false) { this.license = this.appInfo.aboutDialogInfo.license; }
-		if(enyo.exists(this.facebookUrl) == false) { this.facebookUrl = this.appInfo.aboutDialogInfo.facebookUrl; }
-		if(enyo.exists(this.twitterUrl) == false) { this.twitterUrl = this.appInfo.aboutDialogInfo.twitterUrl; }
+		if(Utils.exists(this.title) == false) { this.title = this.appInfo.title; }
+		if(Utils.exists(this.version) == false) { this.version = this.appInfo.version; }
+		if(Utils.exists(this.vendor) == false) { this.vendor = this.appInfo.vendor; }
+		if(Utils.exists(this.website) == false) { this.website = this.appInfo.vendorurl; }
+		if(Utils.exists(this.email) == false) { this.email = this.appInfo.aboutDialogInfo.email; }
+		if(Utils.exists(this.emailSubject) == false) { this.emailSubject = this.appInfo.aboutDialogInfo.emailSubject; }
+		if(Utils.exists(this.emailMessage) == false) { this.emailMessage = this.appInfo.aboutDialogInfo.emailMessage; }
+		if(Utils.exists(this.description) == false) { this.description = this.appInfo.aboutDialogInfo.description; }
+		if(Utils.exists(this.copyright) == false) { this.copyright = this.appInfo.aboutDialogInfo.copyright; }
+		if(Utils.exists(this.license) == false) { this.license = this.appInfo.aboutDialogInfo.license; }
+		if(Utils.exists(this.facebookUrl) == false) { this.facebookUrl = this.appInfo.aboutDialogInfo.facebookUrl; }
+		if(Utils.exists(this.twitterUrl) == false) { this.twitterUrl = this.appInfo.aboutDialogInfo.twitterUrl; }
 	},
 	rendered: function() {
 		this.titleChanged();
@@ -79,7 +80,7 @@ enyo.kind({
 	facebookUrlChanged: function() { this.setControlVisibility(this.facebookUrl, this.$.facebookItem); },
 	twitterUrlChanged: function() { this.setControlVisibility(this.twitterUrl, this.$.twitterItem); },
 	setControlVisibility: function(property, control) {
-		if(enyo.exists(property) == false) {
+		if(Utils.exists(property) == false) {
 			control.setShowing(false);
 		}else{
 			if(this.property == ""){
@@ -91,16 +92,16 @@ enyo.kind({
 	},
 	renderInfo: function() {
 		var content = "";
-		if(enyo.exists(this.version)) {
+		if(Utils.exists(this.version)) {
 			content = content +"<b>Version:</b> " + this.version + "<br/>";
 		}
-		if(enyo.exists(this.vendor)) {
+		if(Utils.exists(this.vendor)) {
 			content = content +"<b>Created By:</b> " + this.vendor + "<br/>";
 		}
-		if(enyo.exists(this.description)) {
+		if(Utils.exists(this.description)) {
 			content = content +"<br/>" + this.description + "<br/>";
 		}
-		if(enyo.exists(this.license)) {
+		if(Utils.exists(this.license)) {
 			content = content +"<br/><b>License:</b><br/>" + this.license + "<br/>";
 		}
 		this.$.info.setContent(content);
@@ -115,10 +116,10 @@ enyo.kind({
 		var emailSubject = "";
 		var emailMessage = "";
 		
-		if (enyo.exists(this.emailSubject)) {
+		if (Utils.exists(this.emailSubject)) {
 			emailSubject = this.emailSubject;
 		}
-		if (enyo.exists(this.emailMessage)) {
+		if (Utils.exists(this.emailMessage)) {
 			emailMessage = this.emailMessage;
 		}
 		

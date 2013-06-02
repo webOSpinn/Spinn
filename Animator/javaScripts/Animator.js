@@ -7,10 +7,13 @@ enyo.kind({
 		lastFrame: 12,
 		timerInterval: 50
 	},
+	components: [
+		{kind: "Spinn.Utils" name: "Utils"}
+	],
 	startAnimation: function() {
-		if (enyo.exists(this.animationTarget)) {
+		if (Utils.exists(this.animationTarget)) {
 			if (this.animationTarget.hasNode()) {
-				if (!enyo.exists(this.animationTimer)) {
+				if (!Utils.exists(this.animationTimer)) {
 					this.currentFrame = 1;
 					var spinSync = this.animation.bind(this);
 					this.animationTimer = setInterval(spinSync, this.timerInterval);
