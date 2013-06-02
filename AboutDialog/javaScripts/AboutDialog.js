@@ -45,18 +45,18 @@ enyo.kind({
 		this.inherited(arguments);
 		this.appInfo = enyo.fetchAppInfo();
 		
-		if(Utils.exists(this.title) == false) { this.title = this.appInfo.title; }
-		if(Utils.exists(this.version) == false) { this.version = this.appInfo.version; }
-		if(Utils.exists(this.vendor) == false) { this.vendor = this.appInfo.vendor; }
-		if(Utils.exists(this.website) == false) { this.website = this.appInfo.vendorurl; }
-		if(Utils.exists(this.email) == false) { this.email = this.appInfo.aboutDialogInfo.email; }
-		if(Utils.exists(this.emailSubject) == false) { this.emailSubject = this.appInfo.aboutDialogInfo.emailSubject; }
-		if(Utils.exists(this.emailMessage) == false) { this.emailMessage = this.appInfo.aboutDialogInfo.emailMessage; }
-		if(Utils.exists(this.description) == false) { this.description = this.appInfo.aboutDialogInfo.description; }
-		if(Utils.exists(this.copyright) == false) { this.copyright = this.appInfo.aboutDialogInfo.copyright; }
-		if(Utils.exists(this.license) == false) { this.license = this.appInfo.aboutDialogInfo.license; }
-		if(Utils.exists(this.facebookUrl) == false) { this.facebookUrl = this.appInfo.aboutDialogInfo.facebookUrl; }
-		if(Utils.exists(this.twitterUrl) == false) { this.twitterUrl = this.appInfo.aboutDialogInfo.twitterUrl; }
+		if(this.$.Utils.exists(this.title) == false) { this.title = this.appInfo.title; }
+		if(this.$.Utils.exists(this.version) == false) { this.version = this.appInfo.version; }
+		if(this.$.Utils.exists(this.vendor) == false) { this.vendor = this.appInfo.vendor; }
+		if(this.$.Utils.exists(this.website) == false) { this.website = this.appInfo.vendorurl; }
+		if(this.$.Utils.exists(this.email) == false) { this.email = this.appInfo.aboutDialogInfo.email; }
+		if(this.$.Utils.exists(this.emailSubject) == false) { this.emailSubject = this.appInfo.aboutDialogInfo.emailSubject; }
+		if(this.$.Utils.exists(this.emailMessage) == false) { this.emailMessage = this.appInfo.aboutDialogInfo.emailMessage; }
+		if(this.$.Utils.exists(this.description) == false) { this.description = this.appInfo.aboutDialogInfo.description; }
+		if(this.$.Utils.exists(this.copyright) == false) { this.copyright = this.appInfo.aboutDialogInfo.copyright; }
+		if(this.$.Utils.exists(this.license) == false) { this.license = this.appInfo.aboutDialogInfo.license; }
+		if(this.$.Utils.exists(this.facebookUrl) == false) { this.facebookUrl = this.appInfo.aboutDialogInfo.facebookUrl; }
+		if(this.$.Utils.exists(this.twitterUrl) == false) { this.twitterUrl = this.appInfo.aboutDialogInfo.twitterUrl; }
 	},
 	rendered: function() {
 		this.titleChanged();
@@ -80,7 +80,7 @@ enyo.kind({
 	facebookUrlChanged: function() { this.setControlVisibility(this.facebookUrl, this.$.facebookItem); },
 	twitterUrlChanged: function() { this.setControlVisibility(this.twitterUrl, this.$.twitterItem); },
 	setControlVisibility: function(property, control) {
-		if(Utils.exists(property) == false) {
+		if(this.$.Utils.exists(property) == false) {
 			control.setShowing(false);
 		}else{
 			if(this.property == ""){
@@ -92,16 +92,16 @@ enyo.kind({
 	},
 	renderInfo: function() {
 		var content = "";
-		if(Utils.exists(this.version)) {
+		if(this.$.Utils.exists(this.version)) {
 			content = content +"<b>Version:</b> " + this.version + "<br/>";
 		}
-		if(Utils.exists(this.vendor)) {
+		if(this.$.Utils.exists(this.vendor)) {
 			content = content +"<b>Created By:</b> " + this.vendor + "<br/>";
 		}
-		if(Utils.exists(this.description)) {
+		if(this.$.Utils.exists(this.description)) {
 			content = content +"<br/>" + this.description + "<br/>";
 		}
-		if(Utils.exists(this.license)) {
+		if(this.$.Utils.exists(this.license)) {
 			content = content +"<br/><b>License:</b><br/>" + this.license + "<br/>";
 		}
 		this.$.info.setContent(content);
@@ -116,10 +116,10 @@ enyo.kind({
 		var emailSubject = "";
 		var emailMessage = "";
 		
-		if (Utils.exists(this.emailSubject)) {
+		if (this.$.Utils.exists(this.emailSubject)) {
 			emailSubject = this.emailSubject;
 		}
-		if (Utils.exists(this.emailMessage)) {
+		if (this.$.Utils.exists(this.emailMessage)) {
 			emailMessage = this.emailMessage;
 		}
 		

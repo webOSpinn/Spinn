@@ -25,7 +25,7 @@ enyo.kind({
 		this.$.caption.setContent(this.caption);
 	},
 	imageSrcChanged: function() {
-		if(Utils.exists(this.imageSrc)) {
+		if(this.$.Utils.exists(this.imageSrc)) {
 			if(this.imageSrc == "") {
 				this.clearIcon();
 			} else {
