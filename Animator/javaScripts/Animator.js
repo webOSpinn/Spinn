@@ -8,7 +8,7 @@ enyo.kind({
 		timerInterval: 50
 	},
 	components: [
-		{kind: "Spinn.Utils" name: "Utils"}
+		{kind: "Spinn.Utils", name: "Utils"}
 	],
 	startAnimation: function() {
 		if (this.$.Utils.exists(this.animationTarget)) {
