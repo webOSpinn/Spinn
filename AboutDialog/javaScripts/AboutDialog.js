@@ -44,21 +44,27 @@ enyo.kind({
 	constructor: function () {
 		this.inherited(arguments);
 		this.appInfo = enyo.fetchAppInfo();
-		
-		if(this.$.Utils.exists(this.title) == false) { this.title = this.appInfo.title; }
-		if(this.$.Utils.exists(this.version) == false) { this.version = this.appInfo.version; }
-		if(this.$.Utils.exists(this.vendor) == false) { this.vendor = this.appInfo.vendor; }
-		if(this.$.Utils.exists(this.website) == false) { this.website = this.appInfo.vendorurl; }
-		if(this.$.Utils.exists(this.email) == false) { this.email = this.appInfo.aboutDialogInfo.email; }
-		if(this.$.Utils.exists(this.emailSubject) == false) { this.emailSubject = this.appInfo.aboutDialogInfo.emailSubject; }
-		if(this.$.Utils.exists(this.emailMessage) == false) { this.emailMessage = this.appInfo.aboutDialogInfo.emailMessage; }
-		if(this.$.Utils.exists(this.description) == false) { this.description = this.appInfo.aboutDialogInfo.description; }
-		if(this.$.Utils.exists(this.copyright) == false) { this.copyright = this.appInfo.aboutDialogInfo.copyright; }
-		if(this.$.Utils.exists(this.license) == false) { this.license = this.appInfo.aboutDialogInfo.license; }
-		if(this.$.Utils.exists(this.facebookUrl) == false) { this.facebookUrl = this.appInfo.aboutDialogInfo.facebookUrl; }
-		if(this.$.Utils.exists(this.twitterUrl) == false) { this.twitterUrl = this.appInfo.aboutDialogInfo.twitterUrl; }
+		this._populatedProperties = false;
 	},
 	rendered: function() {
+		//Have to put this here because for some odd reason the $ hash doesn't have anything in it in the create function
+		if(this._populatedProperties == false) {
+			this._populatedProperties = true;
+			
+			if(this.$.Utils.exists(this.title) == false) { this.title = this.appInfo.title; }
+			if(this.$.Utils.exists(this.version) == false) { this.version = this.appInfo.version; }
+			if(this.$.Utils.exists(this.vendor) == false) { this.vendor = this.appInfo.vendor; }
+			if(this.$.Utils.exists(this.website) == false) { this.website = this.appInfo.vendorurl; }
+			if(this.$.Utils.exists(this.email) == false) { this.email = this.appInfo.aboutDialogInfo.email; }
+			if(this.$.Utils.exists(this.emailSubject) == false) { this.emailSubject = this.appInfo.aboutDialogInfo.emailSubject; }
+			if(this.$.Utils.exists(this.emailMessage) == false) { this.emailMessage = this.appInfo.aboutDialogInfo.emailMessage; }
+			if(this.$.Utils.exists(this.description) == false) { this.description = this.appInfo.aboutDialogInfo.description; }
+			if(this.$.Utils.exists(this.copyright) == false) { this.copyright = this.appInfo.aboutDialogInfo.copyright; }
+			if(this.$.Utils.exists(this.license) == false) { this.license = this.appInfo.aboutDialogInfo.license; }
+			if(this.$.Utils.exists(this.facebookUrl) == false) { this.facebookUrl = this.appInfo.aboutDialogInfo.facebookUrl; }
+			if(this.$.Utils.exists(this.twitterUrl) == false) { this.twitterUrl = this.appInfo.aboutDialogInfo.twitterUrl; }
+		}
+		
 		this.titleChanged();
 		this.renderInfo();
 		this.websiteChanged();

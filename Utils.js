@@ -1,7 +1,8 @@
 enyo.kind({
 	name: "Spinn.Utils",
+	kind: enyo.Component,
 	exists: function (a) {
-		return typeof a !== "undefined" && a !== NaN && a !== null
+		return ((typeof a !== "undefined") && (a !== NaN) && (a !== null))
 	},
 	isEmptyObject: function (b) {
         for (var a in b) {
