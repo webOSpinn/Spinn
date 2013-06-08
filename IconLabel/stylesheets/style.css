@@ -1,0 +1,10 @@
+.spinn-icon-label-icon {
+	padding-left: 7px;
+}
+.spinn-icon-label-caption {
+	padding-left: 7px; 
+	padding-top: 7px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}

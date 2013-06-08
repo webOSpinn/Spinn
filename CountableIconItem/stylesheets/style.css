@@ -1,0 +1,11 @@
+.spinn-countable-icon-item .spinn-icon-label-icon {
+	padding-left: 0px;
+}
+.spinn-countable-icon-item-icon-label {
+	display: inline-block;
+}
+.spinn-countable-icon-item-count {
+	padding-top: 4px;
+	position: relative;
+	float: right;
+}

@@ -32,10 +32,10 @@ enyo.kind({
 		{kind: "Group", caption: "Support", contentFit: true, layoutKind: "VFlexLayout", flex: 1, components: [
 			{kind: "Scroller", name:"fileListScroller", flex: 1, autoHorizontal: false, horizontal: false,
 				components: [
-					{kind: "Spinn.IconItem", name: "webSiteItem", caption:"Visit our Website", imageSrc: "Spinn/AboutDialog/images/web.png", onclick: "onVisitSite"},
-					{kind: "Spinn.IconItem", name: "emailItem", caption:"Send Support Email", imageSrc: "Spinn/AboutDialog/images/email.png", onclick: "onSendEmail"},
-					{kind: "Spinn.IconItem", name: "twitterItem", caption:"Follow Us on Twitter", imageSrc: "Spinn/AboutDialog/images/twitter.png", onclick: "onTwitter"},
-					{kind: "Spinn.IconItem", name: "facebookItem", caption:"Friend Us on Facebook", imageSrc: "Spinn/AboutDialog/images/facebook.png", onclick: "onFacebook"}
+					{kind: "Spinn.CountableIconItem", name: "webSiteItem", caption:"Visit our Website", imageSrc: "Spinn/AboutDialog/images/web.png", showCount: false, onclick: "onVisitSite"},
+					{kind: "Spinn.CountableIconItem", name: "emailItem", caption:"Send Support Email", imageSrc: "Spinn/AboutDialog/images/email.png", showCount: false, onclick: "onSendEmail"},
+					{kind: "Spinn.CountableIconItem", name: "twitterItem", caption:"Follow Us on Twitter", imageSrc: "Spinn/AboutDialog/images/twitter.png", showCount: false, onclick: "onTwitter"},
+					{kind: "Spinn.CountableIconItem", name: "facebookItem", caption:"Friend Us on Facebook", imageSrc: "Spinn/AboutDialog/images/facebook.png", showCount: false, onclick: "onFacebook"}
 			]}
 		]},
 		{name: "copyright", content: "", allowHtml: true, style: "font-size: small; padding-left: 12px; padding-bottom: 10px"},
