@@ -13,7 +13,6 @@ enyo.kind({
 	},
 	components: [
 		{className: "spinn-countable-icon-item", components: [
-			{kind: "Spinn.Utils", name: "Utils"},
 			{kind: "Spinn.IconLabel", name: "iconLabel", className: "spinn-countable-icon-item-icon-label"},
 			{kind: "Spinn.CountPill", name: "count", className: "spinn-countable-icon-item-count"}
 		]}
@@ -37,7 +36,7 @@ enyo.kind({
 		this.$.iconLabel.setIconSrc(this.iconSrc);
 	},
 	showCountChanged: function() {
-		if(this.$.Utils.exists(this.showCount)) {
+		if(Spinn.Utils.exists(this.showCount)) {
 			(this.showCount == true) ? this.$.count.show() : this.$.count.hide();
 		} else {
 			this.showCount = false;

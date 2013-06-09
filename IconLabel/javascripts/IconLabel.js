@@ -8,7 +8,6 @@ enyo.kind({
 		showIcon: true
 	},
 	components:[
-		{kind: "Spinn.Utils", name: "Utils"},
 		{kind: "HFlexBox", components: [
 			{name: "icon", kind: "Image", className:"spinn-icon-label-icon", src: ""},
 			{name: "heightHolder", kind: "Image", src: "Spinn/IconLabel/images/heightHolder.png"},
@@ -27,7 +26,7 @@ enyo.kind({
 	},
 	iconSrcChanged: function() {
 		var emptyImage = "Spinn/IconLabel/images/blank.png";
-		if(this.$.Utils.exists(this.iconSrc)) {
+		if(Spinn.Utils.exists(this.iconSrc)) {
 			if(this.iconSrc == "") {
 				this.$.icon.setSrc(emptyImage);
 			} else {
@@ -40,7 +39,7 @@ enyo.kind({
 	showIconChanged: function() {
 		//HeightHolder is used to keep the text of an IconLabel without the icon showing 
 		//lined up with an IconLabel with the icon showing
-		if(this.$.Utils.exists(this.showIcon)) {
+		if(Spinn.Utils.exists(this.showIcon)) {
 			(this.showIcon == true) ? this.$.icon.show() : this.$.icon.hide();
 			(this.showIcon == true) ? this.$.heightHolder.hide() : this.$.heightHolder.show();
 		} else {

@@ -20,7 +20,6 @@ enyo.kind({
 		twitterUrl: null
 	},
 	components: [
-		{kind: "Spinn.Utils", name: "Utils"},
 		{name: "appOpener", kind: "PalmService", service: "palm://com.palm.applicationManager/", method: "open"},
 		{kind: "Group", caption: "", contentFit: true, layoutKind: "VFlexLayout", style: "height: 125px;", components: [
 			{kind: "Scroller", name:"fileListScroller", flex: 1, autoHorizontal: false, horizontal: false,
@@ -44,27 +43,22 @@ enyo.kind({
 	constructor: function () {
 		this.inherited(arguments);
 		this.appInfo = enyo.fetchAppInfo();
-		this._populatedProperties = false;
+		
+		if(Spinn.Utils.exists(this.title) == false) { this.title = this.appInfo.title; }
+		if(Spinn.Utils.exists(this.version) == false) { this.version = this.appInfo.version; }
+		if(Spinn.Utils.exists(this.vendor) == false) { this.vendor = this.appInfo.vendor; }
+		if(Spinn.Utils.exists(this.website) == false) { this.website = this.appInfo.vendorurl; }
+		if(Spinn.Utils.exists(this.email) == false) { this.email = this.appInfo.aboutDialogInfo.email; }
+		if(Spinn.Utils.exists(this.emailSubject) == false) { this.emailSubject = this.appInfo.aboutDialogInfo.emailSubject; }
+		if(Spinn.Utils.exists(this.emailMessage) == false) { this.emailMessage = this.appInfo.aboutDialogInfo.emailMessage; }
+		if(Spinn.Utils.exists(this.description) == false) { this.description = this.appInfo.aboutDialogInfo.description; }
+		if(Spinn.Utils.exists(this.copyright) == false) { this.copyright = this.appInfo.aboutDialogInfo.copyright; }
+		if(Spinn.Utils.exists(this.license) == false) { this.license = this.appInfo.aboutDialogInfo.license; }
+		if(Spinn.Utils.exists(this.facebookUrl) == false) { this.facebookUrl = this.appInfo.aboutDialogInfo.facebookUrl; }
+		if(Spinn.Utils.exists(this.twitterUrl) == false) { this.twitterUrl = this.appInfo.aboutDialogInfo.twitterUrl; }
 	},
 	rendered: function() {
-		//Have to put this here because for some odd reason the $ hash doesn't have anything in it in the create function
-		if(this._populatedProperties == false) {
-			this._populatedProperties = true;
-			
-			if(this.$.Utils.exists(this.title) == false) { this.title = this.appInfo.title; }
-			if(this.$.Utils.exists(this.version) == false) { this.version = this.appInfo.version; }
-			if(this.$.Utils.exists(this.vendor) == false) { this.vendor = this.appInfo.vendor; }
-			if(this.$.Utils.exists(this.website) == false) { this.website = this.appInfo.vendorurl; }
-			if(this.$.Utils.exists(this.email) == false) { this.email = this.appInfo.aboutDialogInfo.email; }
-			if(this.$.Utils.exists(this.emailSubject) == false) { this.emailSubject = this.appInfo.aboutDialogInfo.emailSubject; }
-			if(this.$.Utils.exists(this.emailMessage) == false) { this.emailMessage = this.appInfo.aboutDialogInfo.emailMessage; }
-			if(this.$.Utils.exists(this.description) == false) { this.description = this.appInfo.aboutDialogInfo.description; }
-			if(this.$.Utils.exists(this.copyright) == false) { this.copyright = this.appInfo.aboutDialogInfo.copyright; }
-			if(this.$.Utils.exists(this.license) == false) { this.license = this.appInfo.aboutDialogInfo.license; }
-			if(this.$.Utils.exists(this.facebookUrl) == false) { this.facebookUrl = this.appInfo.aboutDialogInfo.facebookUrl; }
-			if(this.$.Utils.exists(this.twitterUrl) == false) { this.twitterUrl = this.appInfo.aboutDialogInfo.twitterUrl; }
-		}
-		
+	
 		this.titleChanged();
 		this.renderInfo();
 		this.websiteChanged();
@@ -86,7 +80,7 @@ enyo.kind({
 	facebookUrlChanged: function() { this.setControlVisibility(this.facebookUrl, this.$.facebookItem); },
 	twitterUrlChanged: function() { this.setControlVisibility(this.twitterUrl, this.$.twitterItem); },
 	setControlVisibility: function(property, control) {
-		if(this.$.Utils.exists(property) == false) {
+		if(Spinn.Utils.exists(property) == false) {
 			control.setShowing(false);
 		}else{
 			if(this.property == ""){
@@ -98,16 +92,16 @@ enyo.kind({
 	},
 	renderInfo: function() {
 		var content = "";
-		if(this.$.Utils.exists(this.version)) {
+		if(Spinn.Utils.exists(this.version)) {
 			content = content +"<b>Version:</b> " + this.version + "<br/>";
 		}
-		if(this.$.Utils.exists(this.vendor)) {
+		if(Spinn.Utils.exists(this.vendor)) {
 			content = content +"<b>Created By:</b> " + this.vendor + "<br/>";
 		}
-		if(this.$.Utils.exists(this.description)) {
+		if(Spinn.Utils.exists(this.description)) {
 			content = content +"<br/>" + this.description + "<br/>";
 		}
-		if(this.$.Utils.exists(this.license)) {
+		if(Spinn.Utils.exists(this.license)) {
 			content = content +"<br/><b>License:</b><br/>" + this.license + "<br/>";
 		}
 		this.$.info.setContent(content);
@@ -122,10 +116,10 @@ enyo.kind({
 		var emailSubject = "";
 		var emailMessage = "";
 		
-		if (this.$.Utils.exists(this.emailSubject)) {
+		if (Spinn.Utils.exists(this.emailSubject)) {
 			emailSubject = this.emailSubject;
 		}
-		if (this.$.Utils.exists(this.emailMessage)) {
+		if (Spinn.Utils.exists(this.emailMessage)) {
 			emailMessage = this.emailMessage;
 		}
 		
