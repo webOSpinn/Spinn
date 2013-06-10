@@ -12,13 +12,12 @@ enyo.kind({
 		showIcon: true
 	},
 	components: [
-		{className: "spinn-countable-icon-item", components: [
-			{kind: "Spinn.IconLabel", name: "iconLabel", className: "spinn-countable-icon-item-icon-label"},
-			{kind: "Spinn.CountPill", name: "count", className: "spinn-countable-icon-item-count"}
-		]}
+		{kind: "Spinn.IconLabel", name: "iconLabel", className: "spinn-countable-icon-item-icon-label"},
+		{kind: "Spinn.CountPill", name: "count", className: "spinn-countable-icon-item-count"}
 	],
 	create: function() {
 		this.inherited(arguments);
+		this.addClass("spinn-countable-icon-item");
 		
 		this.captionChanged();
 		this.countChanged();

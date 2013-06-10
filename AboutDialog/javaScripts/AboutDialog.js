@@ -1,7 +1,6 @@
 enyo.kind({
 	name: "Spinn.AboutDialog",
 	kind: enyo.ModalDialog,
-	className: "enyo-popup enyo-modaldialog aboutDialog",
 	layoutKind: "VFlexLayout",
 	caption: "About",
 	contentHeight:"98%", height:"90%", style: "max-height: 570px;",
@@ -42,6 +41,7 @@ enyo.kind({
 	],
 	constructor: function () {
 		this.inherited(arguments);
+		this.addClass("aboutDialog");
 		this.appInfo = enyo.fetchAppInfo();
 		
 		if(Spinn.Utils.exists(this.title) == false) { this.title = this.appInfo.title; }
