@@ -48,4 +48,16 @@ Spinn.Utils.secondsToTime = function(secs)
 Spinn.Utils.zeroPad = function(num, places) {
 	var zero = places - num.toString().length + 1;
 	return Array(+(zero > 0 && zero)).join("0") + num;
+},
+//http://www.mredkj.com/javascript/nfbasic.html
+Spinn.Utils.addCommasToNum = function(num) {
+	num += '';
+	var x = num.split('.');
+	var x1 = x[0];
+	var x2 = x.length > 1 ? '.' + x[1] : '';
+	var rgx = /(\d+)(\d{3})/;
+	while (rgx.test(x1)) {
+		x1 = x1.replace(rgx, '$1' + ',' + '$2');
+	}
+	return x1 + x2;
 }
