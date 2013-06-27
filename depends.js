@@ -2,6 +2,7 @@ enyo.depends(
 	"Spinn/javascripts/Utils.js",
 	"Spinn/PhoneUtils/depends.js",
 	"Spinn/javascripts/RssToJson.js",
+	"Spinn/javascripts/WorkQueue.js",
 	"Spinn/Animator/depends.js",
 	"Spinn/CountPill/depends.js",
 	"Spinn/ActivityToolButton/depends.js",
